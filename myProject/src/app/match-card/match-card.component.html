@@ -11,10 +11,10 @@
 <div class="flex text-sm"> {{data.address}}
 </div>
 <div class="flex">
-    <button class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-1 px-4 rounded-full">
+    <button class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-1 px-4 rounded-full" (click)="openSnackBar('I am interested')">
         Yes
       </button>
-      <button class="border border-slate-400 bg-white hover:bg-slate-300 text-slate-400 font-bold py-1 px-4 rounded-full ml-1">
+      <button class="border border-slate-400 bg-white hover:bg-slate-300 text-slate-400 font-bold py-1 px-4 rounded-full ml-1"   (click)="openSnackBar('I am not interested')">
         No
       </button>
 </div>
