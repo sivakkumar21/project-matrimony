@@ -2,14 +2,13 @@
 
 </div>
  -->
- <div class="flex flex-col rounded-lg border-2 w-[200px] h-[300px] space-y-1">
-    <div class="flex h-[60%]">
-        <img class="rounded-t-lg" src="../../assets/images/gettyimages-146107054-612x612.jpg">
+ <div class="flex flex-col rounded-lg border-2 w-[200px] h-[300px] space-y-1 max-w-sm  shadow-lg">
+    <div class="flex h-[150px]">
+        <img class="rounded-t-lg w-[200px] h-[150px]" [src] ='data.image'>
     </div>
     <div class="flex flex-col p-[10px] space-y-1">
-<div class="font-semibold">Tom Cruise</div>
-<div class="flex text-sm"> 27 Yrs,5 ft 2in Tamil Nadu, Mbbs Doctor Chennai
-    Tamil nadu India
+<div class="font-semibold">{{data.name}}</div>
+<div class="flex text-sm"> {{data.address}}
 </div>
 <div class="flex">
     <button class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-1 px-4 rounded-full">
@@ -20,4 +19,5 @@
       </button>
 </div>
     </div>
+
  </div>
