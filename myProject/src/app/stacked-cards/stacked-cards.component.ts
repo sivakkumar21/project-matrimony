@@ -26,13 +26,10 @@ ngOnInit()
 {
   this.profiles= this.mySuggestions.getMySuggestions();
 }
-  currentIndex = 0;
 
-  handleYes() {
-    this.currentIndex = (this.currentIndex + 1) % this.profiles.length;
-  }
-
-  handleNo() {
-    this.currentIndex = (this.currentIndex - 1 + this.profiles.length) % this.profiles.length;
+  
+  handleActionOnCard(message :any)
+  {
+    this.profiles = this.profiles.filter((item : any)=>{ return item.id!=message})
   }
 }

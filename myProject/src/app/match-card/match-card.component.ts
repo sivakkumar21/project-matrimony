@@ -20,7 +20,7 @@ export class MatchCardComponent {
   }
   openSnackBar(message: string
      ) {
-    this._snackBar.open(message,'',{duration : 1000,verticalPosition :'top'});
+    this._snackBar.open(message,'',{duration : 1500,verticalPosition :'bottom'});
   }
   handleClick(data: any)
   {

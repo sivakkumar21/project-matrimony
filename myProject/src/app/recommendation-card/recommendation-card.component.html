@@ -1,4 +1,4 @@
-<div class="flex w-[200px]  ">
+<div class="flex w-[200px]" >
 <div class="flex flex-col h-[250px] w-full rounded-t-lg">
 <mat-card>
     <div class="flex h-[150px] rounded-t-lg">
@@ -12,14 +12,24 @@
         </div>
 
   </mat-card-content>
+  <div class="flex justify-around">
+  <mat-card-actions class="text-[12px]" align="start">
+   <div class="cursor-pointer flex items-center justify-center" (click)="openSnackBar('Profile ShortListed')"> <mat-icon>star_border</mat-icon>ShortList
+   </div>
+
+    </mat-card-actions>
+
   <mat-card-actions align="end">
-    <button mat-button class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-1 px-4 rounded-full" (click)="openSnackBar('I am interested')">
-        Yes
+    <button mat-button class="border border-slate-400 bg-white hover:bg-slate-300 text-slate-400 font-bold py-0.5 px-3 rounded-full  flex justify-center items-center"   (click)="openSnackBar('I am not interested')">
+        <mat-icon class="cross">add</mat-icon>
+
       </button>
-      <button mat-button class="border border-slate-400 bg-white hover:bg-slate-300 text-slate-400 font-bold py-1 px-4 rounded-full ml-1"   (click)="openSnackBar('I am not interested')">
-        No
+    <button mat-button class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-0.5 px-3 ml-1 rounded-full flex justify-center items-center" (click)="openSnackBar('I am interested')">
+        <mat-icon class="check">done</mat-icon>
       </button>
+
   </mat-card-actions>
+</div>
 </mat-card>
 </div>
 

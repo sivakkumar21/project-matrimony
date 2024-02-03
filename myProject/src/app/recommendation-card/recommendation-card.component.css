@@ -1,0 +1,17 @@
+.cross
+{
+    transform: rotate(45deg);
+    font-size: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 18px;
+}
+.check
+{
+    font-size: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 19px;
+}

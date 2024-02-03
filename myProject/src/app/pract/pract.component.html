@@ -1,0 +1,30 @@
+<!-- app.component.html -->
+<div class="card-container">
+    <div class="card" [ngClass]="{ 'active': currentIndex === 0 }">
+      <!-- Profile Card -->
+      <div class="profile">
+        <!-- Profile Content Goes Here -->
+        <h2>Profile</h2>
+        <p>Name: John Doe</p>
+        <p>Age: 30</p>
+        <!-- Add more profile information here -->
+      </div>
+      <!-- Buttons to Move to Next Card -->
+      <div class="buttons">
+        <button (click)="moveToNext(true)">Yes</button>
+        <button (click)="moveToNext(false)">No</button>
+      </div>
+    </div>
+    <!-- Background Cards -->
+    <div class="background-card1" >
+      <!-- Dummy Card Content Goes Here -->
+      <h2>Card </h2>
+      <!-- Add more dummy card information here -->
+    </div>
+    <div class="background-card2" >
+        <!-- Dummy Card Content Goes Here -->
+        <h2>Card </h2>
+        <!-- Add more dummy card information here -->
+      </div>
+  </div>
+  

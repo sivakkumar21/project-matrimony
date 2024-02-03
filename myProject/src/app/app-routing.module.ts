@@ -10,6 +10,7 @@ import { StackedCardsComponent } from './stacked-cards/stacked-cards.component';
 import { RecommendationCardComponent } from './recommendation-card/recommendation-card.component';
 import { HeaderComponent } from './header/header.component';
 import { LayoutComponent } from './layout/layout.component';
+import { PractComponent } from './pract/pract.component';
 
 const routes: Routes = [
 
@@ -37,6 +38,10 @@ path:'stacked-cards',component :StackedCardsComponent
   path :'recommendation', component:RecommendationCardComponent
 },
 ]},
+
+{
+path :'pract', component :PractComponent
+},
 {path: 'header', component : HeaderComponent},
   {
     path : '**', component : PageNotFoundComponent
