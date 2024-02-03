@@ -7,10 +7,13 @@ import { CustomCaraousalComponent } from './custom-caraousal/custom-caraousal.co
 import { PendingMatchesComponent } from './pending-matches/pending-matches.component';
 import { ProfileComponent } from './profile/profile.component';
 import { StackedCardsComponent } from './stacked-cards/stacked-cards.component';
+import { RecommendationCardComponent } from './recommendation-card/recommendation-card.component';
+import { HeaderComponent } from './header/header.component';
+import { LayoutComponent } from './layout/layout.component';
 
 const routes: Routes = [
-{path : "", redirectTo : 'my-matches', pathMatch : 'full'},
 
+{path : 'user',component : LayoutComponent, children : [
   {path : "my-matches", component : SearchSwipeComponent,
 
 },
@@ -30,7 +33,11 @@ path:'caraousal', component:CustomCaraousalComponent
 {
 path:'stacked-cards',component :StackedCardsComponent
 },
-
+{
+  path :'recommendation', component:RecommendationCardComponent
+},
+]},
+{path: 'header', component : HeaderComponent},
   {
     path : '**', component : PageNotFoundComponent
   },

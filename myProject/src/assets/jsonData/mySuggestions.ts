@@ -1,4 +1,4 @@
-export const myMatches = [
+export const mySuggestions = [
     {
         id : 1,
         image : '../../assets/images/tom.jpg',

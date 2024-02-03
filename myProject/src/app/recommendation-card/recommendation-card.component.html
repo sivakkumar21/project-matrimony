@@ -1,17 +1,18 @@
-
- <div class="flex flex-col rounded-lg border-2 w-full  space-y-1 max-w-sm  shadow-lg">
-    <mat-card>
+<div class="flex w-[200px]  ">
+<div class="flex flex-col h-[250px] w-full rounded-t-lg">
+<mat-card>
     <div class="flex h-[150px] rounded-t-lg">
-        <img mat-card-image (click)="handleClick(data)" class="rounded-t-lg w-full h-[150px] cursor-pointer" [src] ='data.image'>
+        <img mat-card-image class="rounded-t-lg w-full  h-[150px]" [src] ='data.image'>
     </div>
-    <mat-card-content>
+  <mat-card-content>
     <div class="flex flex-col p-[10px] space-y-1">
-<div class="font-semibold cursor-pointer" (click)="handleClick(data)">{{data.name}}</div>
-<div class="flex text-sm"> {{data.address}}
-</div>    </div>
+        <div class="font-semibold">{{data.name}}</div>
+        <div class="flex text-sm">{{data.address}}
+        </div>
+        </div>
 
-</mat-card-content>
-<mat-card-actions align="start">
+  </mat-card-content>
+  <mat-card-actions align="end">
     <button mat-button class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-1 px-4 rounded-full" (click)="openSnackBar('I am interested')">
         Yes
       </button>
@@ -19,6 +20,7 @@
         No
       </button>
   </mat-card-actions>
-
 </mat-card>
- </div>
+</div>
+
+</div>

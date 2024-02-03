@@ -29,4 +29,9 @@ this.selectedProfile = this.data.filter((item : any) => {
   })[0];
   }
 
+  handleBackNav()
+  {
+    this.router.navigate(['/user/pending-matches'])
+  }
+
 }

@@ -1,14 +1,36 @@
 <div class="flex flex-col">
-    <div>
-        User Id : {{selectedProfile.id}}
-    </div>
-<div class="flex">
-    <img [src]="selectedProfile.image"/>
+
+    <div (click)="handleBackNav()" class="cursor-pointer"><- Back to Matches</div>
+    <div class="flex flex-col md:w-1/2 sm:w-full mt-3 bg-blue-400 p-3 ml-5 rounded-lg shadow-md">
+<div class="flex w-full items-center justify-center">
+    <img class="w-[180px] h-[180px] rounded-lg" [src]="selectedProfile.image"/>
+</div>
+<!-- <div>
+    User Id : {{selectedProfile.id}}
 </div>
 <div>
 Name : {{selectedProfile.name}}
 </div>
 <div>
    Address : {{selectedProfile.address}}
+</div> -->
+
+<div class="grid grid-cols-2 gap-4 mt-2">
+<div class="font-bold">User Id</div>
+<div>{{selectedProfile.id}}</div>    
+<div class="font-bold">Name</div>
+<div>{{selectedProfile.name}}</div>
+<div class="font-bold">Address </div>
+<div>{{selectedProfile.address}}</div>
+<div class="font-bold">Preference </div>
+<div >Na</div>
+<div class="font-bold">Occupation </div>
+<div >Na</div>
+<div class="font-bold">Asset Details</div>
+<div >Na</div>
+<div class="font-bold">Other Info</div>
+<div >Na</div>
 </div>
+
+  </div>
 </div>

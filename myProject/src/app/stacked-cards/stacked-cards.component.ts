@@ -1,19 +1,31 @@
 // stacked-cards.component.ts
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { RecommendationCardComponent } from '../recommendation-card/recommendation-card.component';
+import { MySuggestionsService } from '../my-suggestions.service';
+import { HeaderComponent } from '../header/header.component';
 
 
 @Component({
   selector: 'app-stacked-cards',
   templateUrl: './stacked-cards.component.html',
-  styleUrls: ['./stacked-cards.component.css']
+  styleUrls: ['./stacked-cards.component.css'],
+  standalone: true,
+  imports : [CommonModule,RecommendationCardComponent,]
 })
 export class StackedCardsComponent {
-  profiles = [
-    { name: 'John', age: 30, image: 'john.jpg' },
-    { name: 'Alice', age: 25, image: 'alice.jpg' },
-    { name: 'Bob', age: 35, image: 'bob.jpg' },
+  profiles : any= [
+  
   ];
 
+constructor(private mySuggestions : MySuggestionsService)
+{
+
+}
+ngOnInit()
+{
+  this.profiles= this.mySuggestions.getMySuggestions();
+}
   currentIndex = 0;
 
   handleYes() {

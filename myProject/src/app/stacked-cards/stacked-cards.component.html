@@ -1,21 +1,24 @@
+
 <div class="bg-white">
     <div class="flex justify-center items-center min-h-screen min-w-full">
           <div class="flex relative">
               <div
                 
-               class="w-72 h-40 border-2 transform transition-all  opacity-100 bg-blue-300 absolute rounded-lg" *ngFor="let profile of profiles; let i = index" 
+               class=" transform transition-all  opacity-100  absolute rounded-lg" 
+               *ngFor="let profile of profiles; let i = index" 
               [ngClass]="'top-'+((i*2)+2)"
               [style.zIndex]="i === currentIndex ? 2 : 1"
               
               >
-              <mat-card class="w-80 mx-auto">
+              <recommendation-card [data] = 'profile' ></recommendation-card>
+              <!-- <mat-card class="w-80 mx-auto">
                 <img mat-card-image [src]="profile.image" alt="Profile Image" class="h-48 object-cover">
                 <mat-card-content class="text-center">
                   <h2 class="text-xl font-semibold">{{ profile.name }}</h2>
                   <p class="text-gray-600">Age: {{ profile.age }}</p>
                 </mat-card-content>
               </mat-card>
-  
+   -->
             <!-- <div class="w-72 h-40 bg-yellow-400 transform transition-all  absolute top-4  rounded-lg">
       
               </div>
@@ -32,11 +35,12 @@
               </div> -->
           </div>
       </div>
-      <button (click)="handleNo()" class="bg-red-500 text-white py-2 px-4 rounded-lg mr-4">No</button>
-      <button (click)="handleYes()" class="bg-green-500 text-white py-2 px-4 rounded-lg">Yes</button>
+
   </div>
 
 
+  <button (click)="handleNo()" class="bg-red-500 text-white py-2 px-4 rounded-lg mr-4">No</button>
+  <button (click)="handleYes()" class="bg-green-500 text-white py-2 px-4 rounded-lg">Yes</button>
   <!-- stacked-cards.component.html -->
 <!-- stacked-cards.component.html -->
 <!-- <div class="card-container">

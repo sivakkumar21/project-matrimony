@@ -16,7 +16,6 @@ import {MatCardModule} from '@angular/material/card';
   declarations: [
     AppComponent,
     PageNotFoundComponent,
-    StackedCardsComponent,
   ],
   imports: [
     BrowserModule,
