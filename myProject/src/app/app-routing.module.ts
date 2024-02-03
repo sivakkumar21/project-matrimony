@@ -1,30 +1,25 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SearchSwipeComponent } from './search-swipe/search-swipe.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MatchCardComponent } from './match-card/match-card.component';
-import { CustomCaraousalComponent } from './custom-caraousal/custom-caraousal.component';
 import { PendingMatchesComponent } from './pending-matches/pending-matches.component';
 import { ProfileComponent } from './profile/profile.component';
 import { StackedCardsComponent } from './stacked-cards/stacked-cards.component';
 import { RecommendationCardComponent } from './recommendation-card/recommendation-card.component';
-import { HeaderComponent } from './header/header.component';
 import { LayoutComponent } from './layout/layout.component';
-import { PractComponent } from './pract/pract.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
 
-{path : 'user',component : LayoutComponent, children : [
-  {path : "my-matches", component : SearchSwipeComponent,
+  {path : 'login', component : LoginComponent},
 
-},
+{path : 'user',component : LayoutComponent, children : [
+
   {
     path:'match-card', component : MatchCardComponent,
     
   },
-{
-path:'caraousal', component:CustomCaraousalComponent
-},
+
 {
   path: 'pending-matches',component:PendingMatchesComponent
 },
@@ -39,10 +34,7 @@ path:'stacked-cards',component :StackedCardsComponent
 },
 ]},
 
-{
-path :'pract', component :PractComponent
-},
-{path: 'header', component : HeaderComponent},
+
   {
     path : '**', component : PageNotFoundComponent
   },

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
+import { LoginComponent } from '../login/login.component';
 
 @Component({
   selector: 'app-header',
@@ -11,4 +12,18 @@ import { RouterModule } from '@angular/router';
 })
 export class HeaderComponent {
 
+  constructor(private router : Router)
+  {
+
+  }
+  isMenuOpen : boolean = false;
+handleClickMenu()
+{
+  this.isMenuOpen=!this.isMenuOpen;
+}
+handleLogout()
+{
+  localStorage.clear();
+  this.router.navigate(['/login'])
+}
 }
