@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { LoginComponent } from '../login/login.component';
+import { AuthServiceService } from '../auth-service.service';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,7 @@ import { LoginComponent } from '../login/login.component';
 })
 export class HeaderComponent {
 
-  constructor(private router : Router)
+  constructor(private router : Router, private authService : AuthServiceService)
   {
 
   }
@@ -23,7 +24,8 @@ handleClickMenu()
 }
 handleLogout()
 {
-  localStorage.clear();
-  this.router.navigate(['/login'])
+
+this.authService.logout();
+  
 }
 }

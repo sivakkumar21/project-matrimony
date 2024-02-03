@@ -4,6 +4,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { AuthServiceService } from '../auth-service.service';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-constructor(private router : Router, private _snackBar: MatSnackBar)
+constructor(private router : Router, private _snackBar: MatSnackBar,private authService : AuthServiceService)
 {
 
 }
@@ -24,7 +25,9 @@ loginForm = new FormGroup({
 handleLogin()
 {
   let inputObj = this.loginForm.value;
-  if(inputObj.uName ==='admin' && inputObj.pWord ==='admin')
+
+
+  if(this.authService.login(inputObj.uName,inputObj.pWord))
   {
     localStorage.setItem('token', "current token value");
     this.router.navigate(['/user/pending-matches']);

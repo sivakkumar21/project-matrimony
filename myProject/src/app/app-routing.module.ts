@@ -8,12 +8,15 @@ import { StackedCardsComponent } from './stacked-cards/stacked-cards.component';
 import { RecommendationCardComponent } from './recommendation-card/recommendation-card.component';
 import { LayoutComponent } from './layout/layout.component';
 import { LoginComponent } from './login/login.component';
+import { authGaurdGuard } from './auth-gaurd.guard';
 
 const routes: Routes = [
 
   {path : 'login', component : LoginComponent},
 
-{path : 'user',component : LayoutComponent, children : [
+  {path :"", redirectTo : 'login', pathMatch:'full'},
+
+{path : 'user',component : LayoutComponent, canActivate: [authGaurdGuard], children : [
 
   {
     path:'match-card', component : MatchCardComponent,
