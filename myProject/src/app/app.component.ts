@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Tooltip, initTE } from 'tw-elements';
 
 
 @Component({
@@ -8,8 +7,6 @@ import { Tooltip, initTE } from 'tw-elements';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'myProject';
-  ngOnInit() {
-    initTE({ Tooltip });
-  }
+  title = 'Matrimony-Project';
+  
 }
