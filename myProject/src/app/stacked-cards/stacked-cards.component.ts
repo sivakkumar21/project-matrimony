@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RecommendationCardComponent } from '../recommendation-card/recommendation-card.component';
 import { MySuggestionsService } from '../my-suggestions.service';
-import { HeaderComponent } from '../header/header.component';
 
 
 @Component({
@@ -11,7 +10,8 @@ import { HeaderComponent } from '../header/header.component';
   templateUrl: './stacked-cards.component.html',
   styleUrls: ['./stacked-cards.component.css'],
   standalone: true,
-  imports : [CommonModule,RecommendationCardComponent,]
+  imports : [CommonModule,RecommendationCardComponent],
+ 
 })
 export class StackedCardsComponent {
   profiles : any= [
@@ -32,4 +32,9 @@ ngOnInit()
   {
     this.profiles = this.profiles.filter((item : any)=>{ return item.id!=message})
   }
+
+  animationState!: string;
+
+  
+
 }
