@@ -1,8 +1,9 @@
 // stacked-cards.component.ts
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RecommendationCardComponent } from '../recommendation-card/recommendation-card.component';
+import { RecommendationCardComponent } from '../components/recommendation-card/recommendation-card.component';
 import { MySuggestionsService } from '../my-suggestions.service';
+import { Suggestions } from '../interface/suggestions';
 
 
 @Component({
@@ -14,10 +15,7 @@ import { MySuggestionsService } from '../my-suggestions.service';
  
 })
 export class StackedCardsComponent {
-  profiles : any= [
-  
-  ];
-
+  profiles! : Suggestions[]
 constructor(private mySuggestions : MySuggestionsService)
 {
 
@@ -28,12 +26,11 @@ ngOnInit()
 }
 
   
-  handleActionOnCard(message :any)
+  handleActionOnCard(message :string)
   {
-    this.profiles = this.profiles.filter((item : any)=>{ return item.id!=message})
+    this.profiles = this.profiles.filter((item : Suggestions)=>{ return item.id!=message})
   }
 
-  animationState!: string;
 
   
 

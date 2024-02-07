@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { MatchCardComponent } from './match-card/match-card.component';
 import { PendingMatchesComponent } from './pending-matches/pending-matches.component';
 import { ProfileComponent } from './profile/profile.component';
-import { StackedCardsComponent } from './stacked-cards/stacked-cards.component';
-import { RecommendationCardComponent } from './recommendation-card/recommendation-card.component';
+import { RecommendationCardComponent } from './components/recommendation-card/recommendation-card.component';
 import { LayoutComponent } from './layout/layout.component';
 import { LoginComponent } from './login/login.component';
 import { authGaurdGuard } from './auth-gaurd.guard';
@@ -18,10 +16,7 @@ const routes: Routes = [
 
 {path : 'user',component : LayoutComponent, canActivate: [authGaurdGuard], children : [
 
-  {
-    path:'match-card', component : MatchCardComponent,
-    
-  },
+  
 
 {
   path: 'pending-matches',component:PendingMatchesComponent
@@ -30,7 +25,7 @@ const routes: Routes = [
   path :'pending-matches/profile/:id',component :ProfileComponent
 },
 {
-path:'stacked-cards',component :StackedCardsComponent
+path:'stacked-cards', loadComponent : ()=>import("./stacked-cards/stacked-cards.component").then((m)=>m.StackedCardsComponent)
 },
 {
   path :'recommendation', component:RecommendationCardComponent

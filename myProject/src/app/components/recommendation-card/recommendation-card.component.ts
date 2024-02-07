@@ -5,7 +5,7 @@ import { MatCard, MatCardModule } from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon'
 import { animate, keyframes, transition, trigger } from '@angular/animations';
 
-import * as kf from "../keyframes/keyframes"
+import * as kf from "../../keyframes/keyframes"
 import { HammerModule } from '@angular/platform-browser';
 import "hammerjs"
 

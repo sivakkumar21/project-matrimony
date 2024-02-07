@@ -5,7 +5,8 @@ import {
   initTE,
 } from "tw-elements";
 import { MyMatchesService } from '../my-matches.service';
-import { MatchCardComponent } from '../match-card/match-card.component';
+import { MatchCardComponent } from '../components/match-card/match-card.component';
+import { Suggestions } from '../interface/suggestions';
 
 
 @Component({
@@ -18,9 +19,8 @@ import { MatchCardComponent } from '../match-card/match-card.component';
 
 
 export class PendingMatchesComponent {
-  data : any = [];
-  currentData : any = [];
-  // carouselExampleControls = new Carousel(document.getElementById("carouselExampleControls"));
+  data!: Suggestions[];
+  currentData! :Suggestions;
 
    myCarousel : any;
 
@@ -55,7 +55,6 @@ export class PendingMatchesComponent {
     this.myCarousel.next();
 
   }
-// this.myCarousel.next();
 
 }
 
@@ -78,7 +77,7 @@ this.myCarousel.prev();
   }
 // this.myCarousel.prev();
 }
-getCurrentIndex()
+getCurrentIndex() : number
 {
 return this.data.indexOf(this.currentData);
 }
